@@ -27,25 +27,25 @@ public class BasicLuisDialog : LuisDialog<object>
     [LuisIntent("historique")]
     public async Task PurchaseRecords(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"You have reached the MyIntent intent. You said: {result.Query}"); //
+        await context.PostAsync($"You have reached the previous pruchase records intent. You said: {result.Query}"); //
         context.Wait(MessageReceived);
     } 
     [LuisIntent("commander")]
     public async Task OrderIntent(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"You have reached the MyIntent intent. You said: {result.Query}"); //
+        await context.PostAsync($"You have reached the order intent. You said: {result.Query}"); //
         context.Wait(MessageReceived);
     }
     [LuisIntent("Aide")]
     public async Task HelpIntent(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"You have reached the MyIntent intent. You said: {result.Query}"); //
+        await context.PostAsync($"You have reached the help intent. You said: {result.Query}"); //
         context.Wait(MessageReceived);
     }
     [LuisIntent("suivi livraison")]
     public async Task ShipmentIntent(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"You have reached the MyIntent intent. You said: {result.Query}"); //
+        await context.PostAsync($"You have reached the shipment intent. You said: {result.Query}"); //
         context.Wait(MessageReceived);
     }
 }

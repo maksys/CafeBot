@@ -22,11 +22,13 @@ public class BasicLuisDialog : LuisDialog<object>
     [LuisIntent("None")]
     public async Task NoneIntent(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"Vous avez-dit : {result.Query}. Vous souhaitiez certainement dir bonjour. Sinon je ne vous ai pas compris, tapez aide pour connaitre mes fonctionnalités"); //
+        var message = result;
+        
+        await context.PostAsync(@"Bonjour {message.From.Name}."); //
         context.Wait(MessageReceived);
     }
 
-    [LuisIntent("historique")]
+    [LuisIntent("Solde")]
     public async Task PurchaseRecords(IDialogContext context, LuisResult result)
     {
         await context.PostAsync($"Souhaitez-vous connaitre tout votre historique de commande ?"); //
@@ -39,7 +41,7 @@ public class BasicLuisDialog : LuisDialog<object>
         await context.PostAsync($"Je peux vous aider à commander du café, suivre votre livraison en cours, voire votre historique de commandes"); //
         context.Wait(MessageReceived);
     }
-    [LuisIntent("suivi livraison")]
+    [LuisIntent("Virement")]
     public async Task ShipmentIntent(IDialogContext context, LuisResult result)
     {
         await context.PostAsync($"Votre colis est ici :"); //

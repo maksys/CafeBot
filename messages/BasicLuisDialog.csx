@@ -24,7 +24,7 @@ public class BasicLuisDialog : LuisDialog<object>
     {
         var message = result;
         
-        await context.PostAsync(@"Bonjour {message.From.Name}."); //
+        await context.PostAsync($"Bonjour {message.From.Name}."); //
         context.Wait(MessageReceived);
     }
 

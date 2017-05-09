@@ -23,9 +23,9 @@ public class BasicLuisDialog : LuisDialog<object>
     public async Task NoneIntent(IDialogContext context, LuisResult result)
     {
         var message = result;
-        
+        /*
         await context.PostAsync($"Bonjour {message.From.Name}."); //
-        context.Wait(MessageReceived);
+        context.Wait(MessageReceived);*/
     }
 
     [LuisIntent("Solde")]

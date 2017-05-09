@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Azure;
 using Microsoft.Bot.Builder.Dialogs;
 
+[Serializable]
 public class MainDialog : IDialog<object>
 {
 	public MainDialog()

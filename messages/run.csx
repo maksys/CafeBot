@@ -1,5 +1,5 @@
 #r "Newtonsoft.Json"
-#load "BasicLuisDialog.csx"
+#load "MainDialog.csx"
 
 using System;
 using System.Net;

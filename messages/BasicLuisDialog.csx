@@ -23,9 +23,9 @@ public class BasicLuisDialog : LuisDialog<object>
     public async Task NoneIntent(IDialogContext context, LuisResult result)
     {
         var message = result;
-        /*
-        await context.PostAsync($"Bonjour {message.From.Name}."); //
-        context.Wait(MessageReceived);*/
+        
+        await context.PostAsync($"None intent."); //
+        //context.Wait(MessageReceived);
     }
 
     [LuisIntent("Solde")]
@@ -53,8 +53,8 @@ public class BasicLuisDialog : LuisDialog<object>
     [LuisIntent("commander")]
     public async Task OrderIntent(IDialogContext context, LuisResult result)
     {
-        //await context.PostAsync($"You have reached the order intent. You said: {result.Query}"); //
-        //context.Wait(MessageReceived);
+        await context.PostAsync($"You have reached the order intent. You said: {result.Query}"); //
+        context.Wait(MessageReceived);
         this.ShowOptions(context);
     }
 
@@ -72,11 +72,11 @@ public class BasicLuisDialog : LuisDialog<object>
             switch (optionSelected)
             {
                 case RecurentOption:
-                    //context.Call(new RecurentOrderDialog(), this.ResumeAfterOptionDialog);
+                    context.Call(new RecurentOrderDialog(), this.ResumeAfterOptionDialog);
                     break;
 
                 case SpecialOption:
-                    //context.Call(new SpecialOrderDialog(), this.ResumeAfterOptionDialog);
+                    context.Call(new SpecialOrderDialog(), this.ResumeAfterOptionDialog);
                     break;
             }
         }

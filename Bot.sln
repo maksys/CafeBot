@@ -27,10 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messages", "messages", "{F4
 	ProjectSection(SolutionItems) = preProject
 		messages\BasicLuisDialog.csx = messages\BasicLuisDialog.csx
 		messages\function.json = messages\function.json
+		MainDialog.csx = MainDialog.csx
 		messages\project.json = messages\project.json
 		messages\project.lock.json = messages\project.lock.json
 		messages\run.csx = messages\run.csx
-		WelcomeDialog.csx = WelcomeDialog.csx
 	EndProjectSection
 EndProject
 Global
